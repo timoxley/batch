@@ -26,7 +26,7 @@ module.exports = Batch;
  */
 
 function Batch() {
-  EventEmitter.call(this);
+  if (EventEmitter) EventEmitter.call(this);
   this.fns = [];
   this.concurrency(Infinity);
   for (var i = 0, len = arguments.length; i < len; ++i) {
